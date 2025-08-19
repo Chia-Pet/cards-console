@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manni.dev</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    #console {
+      font-family: 'Courier New', Courier, monospace;
+      white-space: pre-line; /* preserves \n line breaks */
+      transition: none !important;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script>
+    // Custom Tailwind color config
+    tailwind.config = {
+      darkMode: 'class',
+      safelist: ['bg-gray-100','bg-gray-900','dark:bg-gray-900'],
+      theme: {
+        extend: {
+          colors: {
+            // Primary Colors
+            'primary-cyan': '#00c1de',  // Pantone 311
+            'primary-yellow': '#fee01e', // Pantone 107
+            'primary-blue': '#00376e',   // Pantone 294
+            'primary-gray': '#76787a',   // Pantone Cool Gray 9
+
+            // Secondary Colors
+            'secondary-teal': '#0091b2', // Pantone 632
+            'secondary-yellow': '#d8c722' // Pantone 611
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-secondary-teal dark:bg-gray-900">
+  <div id="console" class="h-screen w-screen fixed top-0 left-0 bg-black text-white p-4"></div>
+
+  <div id="main-content" class="hidden bg-primary-cyan dark:bg-gray-900">
+    <!-- Top Bar -->
+    <header class="bg-primary-blue dark:bg-gray-800 py-4 shadow-md">
+        <div class="container mx-auto flex justify-center items-center relative">
+            <h1 class="text-3xl font-bold text-gray-100 dark:text-white">Manni.Dev</h1>
+            <button id="darkModeToggle" class="absolute right-4 text-gray-800 dark:text-secondary-yellow">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Your main site content goes here -->
+    <template id="card-template">
+      <a href="#"
+        class="bg-secondary-teal dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg 
+                transition-shadow duration-300 flex flex-col p-6 min-h-48">
+        <h3 class="text-center text-xl font-bold text-gray-900 dark:text-white mb-2"></h3>
+        <p class="text-gray-700 dark:text-gray-300 flex-grow"></p>
+      </a>
+    </template>
+
+    <div id="card-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 px-32 py-16 items-stretch">
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary-blue dark:bg-gray-800 py-2 border-t dark:border-gray-700">
+        <div class="container mx-auto px-4 text-center text-gray-500 dark:text-gray-400 text-sm">
+            &copy; 2025 Manni. All rights reserved.
+        </div>
+    </footer>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
