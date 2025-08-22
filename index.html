@@ -2,77 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manni.dev</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    #console {
-      font-family: 'Courier New', Courier, monospace;
-      white-space: pre-line; /* preserves \n line breaks */
-      transition: none !important;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
   <script>
-    // Custom Tailwind color config
     tailwind.config = {
       darkMode: 'class',
-      safelist: ['bg-gray-100','bg-gray-900','dark:bg-gray-900'],
+      safelist: [
+        'bg-darkmode-bg','bg-darkmode-card','bg-lightmode-bg','bg-lightmode-card',
+        'text-darkmode-text','text-lightmode-text','text-darkmode-secondary','text-lightmode-accent'
+      ],
       theme: {
         extend: {
           colors: {
-            // Primary Colors
-            'primary-cyan': '#00c1de',  // Pantone 311
-            'primary-yellow': '#fee01e', // Pantone 107
-            'primary-blue': '#00376e',   // Pantone 294
-            'primary-gray': '#76787a',   // Pantone Cool Gray 9
-
-            // Secondary Colors
-            'secondary-teal': '#0091b2', // Pantone 632
-            'secondary-yellow': '#d8c722' // Pantone 611
+            'darkmode-bg': '#000000',
+            'darkmode-card': '#111111',
+            'darkmode-text': '#00ff66',
+            'darkmode-secondary': '#00cc77',
+            'darkmode-accent': '#00bcd4',
+            'darkmode-border': '#222222',
+            'lightmode-bg': '#001144',
+            'lightmode-card': '#002266',
+            'lightmode-text': '#ffffff',
+            'lightmode-accent': '#00bcd4',
+            'lightmode-border': '#003366',
           }
         }
       }
     };
   </script>
 </head>
-<body class="min-h-screen bg-secondary-teal dark:bg-gray-900">
-  <div id="console" class="h-screen w-screen fixed top-0 left-0 bg-black text-white p-4"></div>
-
-  <div id="main-content" class="hidden bg-primary-cyan dark:bg-gray-900">
-    <!-- Top Bar -->
-    <header class="bg-primary-blue dark:bg-gray-800 py-4 shadow-md">
-        <div class="container mx-auto flex justify-center items-center relative">
-            <h1 class="text-3xl font-bold text-gray-100 dark:text-white">Manni.Dev</h1>
-            <button id="darkModeToggle" class="absolute right-4 text-gray-800 dark:text-secondary-yellow">
-                <i class="fas fa-sun"></i>
-            </button>
-        </div>
+<body class="min-h-screen bg-lightmode-bg text-lightmode-text dark:bg-darkmode-bg dark:text-darkmode-text transition-colors duration-500">
+  <!-- Terminal intro -->
+  <div id="console" class="h-screen w-screen fixed top-0 left-0 bg-lightmode-bg text-lightmode-text dark:bg-darkmode-bg dark:text-darkmode-text p-4">
+  </div>
+  <div id="skip-hint" class="text-lightmode-accent dark:text-darkmode-accent">Click or press any key to skip</div>
+  <!-- Main content -->
+  <div id="main-content" class="hidden" role="main">
+    <!-- Header -->
+    <header class="bg-lightmode-card dark:bg-darkmode-card py-4 border-b border-lightmode-border dark:border-darkmode-border shadow-md">
+      <div class="container mx-auto flex justify-center items-center relative">
+        <h1 class="text-3xl font-bold text-lightmode-text dark:text-darkmode-text">Manni.Dev</h1>
+        <button id="darkModeToggle" 
+                class="absolute right-12 text-lightmode-accent dark:text-darkmode-accent hover:scale-110 transition-transform"
+                aria-label="Toggle dark mode">
+          <i class="fas fa-sun" aria-hidden="true"></i>
+        </button>
+        <button id="FToggle" 
+                class="absolute right-4 hover:scale-110 transition-transform"
+                aria-label="Toggle F Keys">
+          <i class="fa-solid fa-keyboard" aria-hidden="true" style="color: rgb(34, 197, 94);"></i>
+        </button>
+      </div>
     </header>
 
-    <!-- Your main site content goes here -->
+    <div id="function-keys" class="flex justify-center space-x-16 p-4">
+    <span id="f2" class="hover:text-lightmode-bg dark:hover:text-darkmode-bg hover:bg-lightmode-text dark:hover:bg-darkmode-text">
+        <a href="#" class="font-mono px-1 transition-colors">
+        <span class="text-red-600 hover:bg-lightmode-text dark:hover:bg-darkmode-text">[F2]</span> Blog</a>
+    </span>
+    <span id="f8" class="hover:text-lightmode-bg dark:hover:text-darkmode-bg hover:bg-lightmode-text dark:hover:bg-darkmode-text">
+        <a href="#" class="font-mono px-1 transition-colors">
+        <span class="text-red-600 hover:bg-lightmode-text dark:hover:bg-darkmode-text">[F8]</span> Links</a>
+    </span>
+    </div>
+
+    <!-- Card template -->
     <template id="card-template">
       <a href="#"
-        class="bg-secondary-teal dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg 
-                transition-shadow duration-300 flex flex-col p-6 min-h-48">
-        <h3 class="text-center text-xl font-bold text-gray-900 dark:text-white mb-2"></h3>
-        <p class="text-gray-700 dark:text-gray-300 flex-grow"></p>
+        target="_blank"
+        rel="noopener noreferrer"
+        class="card-container bg-lightmode-card dark:bg-darkmode-card border border-lightmode-border dark:border-darkmode-border
+               rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col p-6 min-h-48
+               focus:outline-none focus:ring-2 focus:ring-lightmode-accent dark:focus:ring-darkmode-accent">
+        <div class="status-header">
+          <h3 class="card-title text-xl font-bold text-lightmode-text dark:text-darkmode-text"></h3>
+          <span class="status-indicator"></span>
+        </div>
+        <p class="card-description text-lightmode-accent dark:text-darkmode-secondary flex-grow text-sm leading-relaxed mb-3"></p>
+        <div class="card-metadata text-xs text-lightmode-accent dark:text-darkmode-secondary opacity-75 border-t border-lightmode-border dark:border-darkmode-border pt-2 mt-auto hidden"></div>
       </a>
     </template>
 
-    <div id="card-grid"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 px-32 py-16 items-stretch">
+    <!-- Container for article content -->
+    <div id="article-wrapper" class="hidden relative">
+      <button id="close-article" class="absolute top-4 right-4 text-lightmode-accent dark:text-darkmode-accent hover:scale-110 transition-transform z-10 bg-lightmode-card dark:bg-darkmode-card p-2 rounded-full border border-lightmode-border dark:border-darkmode-border">
+        <i class="fas fa-times text-lg" aria-label="Close article"></i>
+      </button>
+      <div id="article-container" class="p-4"></div>
     </div>
-
+    
     <!-- Footer -->
-    <footer class="bg-primary-blue dark:bg-gray-800 py-2 border-t dark:border-gray-700">
-        <div class="container mx-auto px-4 text-center text-gray-500 dark:text-gray-400 text-sm">
-            &copy; 2025 Manni. All rights reserved.
-        </div>
+    <footer class="bg-lightmode-card dark:bg-darkmode-card py-2 border-t border-lightmode-border dark:border-darkmode-border">
+      <div class="container mx-auto px-4 text-center text-lightmode-accent dark:text-darkmode-secondary text-sm">
+        &copy; 2025 Manni. All rights reserved.
+      </div>
     </footer>
   </div>
+
   <script src="main.js"></script>
 </body>
 </html>

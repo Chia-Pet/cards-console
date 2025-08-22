@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Chia-Panel",
+    "description": "Modular web-based control panel for managing servers and internal tools (watch over your Chia Garden!).",
+    "metadata": "Created by: Manni the Dev.",
+    "url": "https://chiapanel.manni-dm.dev"
+  },
+  {
+    "title": "IP-Tool",
+    "description": "Quickly check public and local IP addresses with network diagnostic features.",
+    "metadata": "Created by: Manni the Dev.",
+    "url": "https://tools.manni-dm.dev"
+  },
+  {
+    "title": "Manni the Dev",
+    "description": "Senior IT pro, coder, and problem-solver showing off projects, skills, and more.",
+    "metadata": "About: Manni the Dev.",
+    "url": "https://resume.manni-dm.dev"
+  },
+  {
+    "title": "Authentik - Authentication Server",
+    "description": "Self-hosted identity provider with secure SSO for centralized authentication across services.",
+    "metadata": "Curated by: Manni the Dev.",
+    "url": "https://auth.manni-dm.dev"
+  },
+  {
+    "title": "Trilium Notes",
+    "description": "Hierarchical note-taking application for personal knowledge management and documentation.",
+    "metadata": "Curated by: Manni the Dev.",
+    "url": "https://trilium.manni-dm.dev/"
+  },
+  {
+    "title": "Portainer",
+    "description": "Docker container and Swarm management interface.",
+    "metadata": "Caution: Internal connection only.",
+    "url": "https://www.portainer.io/"
+  },
+  {
+    "title": "UnRaid Server",
+    "description": "NAS and virtualization platform for server management.",
+    "metadata": "Caution: Internal connection only.",
+    "url": "https://unraid.net/"
+  },
+  {
+    "title": "Nginx Proxy Manager",
+    "description": "Domain routing and SSL certificate management interface.",
+    "metadata": "Caution: Internal connection only.",
+    "url": "https://nginxproxymanager.com/"
+  },
+  {
+    "title": "Grafana",
+    "description": "Metrics dashboard and visualization platform for monitoring server performance and system health.",
+    "metadata": "Caution: Internal connection only.",
+    "url": "https://grafana.com/"
+  },
+  {
+    "title": "Home Assistant",
+    "description": "Home automation platform for controlling IoT devices, sensors, and smart home integrations.",
+    "metadata": "Caution: Internal connection only.",
+    "url": "https://www.home-assistant.io/"
+  },
+  {
+    "title": "GitHub Profile",
+    "description": "Personal repository for projects, scripts, and code experiments. Open source contributions and portfolio.",
+    "metadata": "Alert: Code written at 3AM with energy drinks, proceed with caution.",
+    "url": "https://github.com/Chia-Pet/"
+  },
+  {
+    "title": "Cloudflare Dashboard",
+    "description": "DNS management, CDN optimization, and website security services.",
+    "metadata": "Cloud wizardry: proceed with confidence.",
+    "url": "https://dash.cloudflare.com"
+  },
+  {
+    "title": "ChatGPT",
+    "description": "OpenAI's conversational AI for automation assistance, coding help, and research tasks.",
+    "metadata": "Note: Infinite patience, questionable coding advice.",
+    "url": "https://chatgpt.com"
+  },
+  {
+    "title": "Gemini AI Studio",
+    "description": "Google's AI development environment for building and testing AI-powered applications.",
+    "metadata": "Note: Free AI fun but your data pays the price.",
+    "url": "https://aistudio.google.com/"
+  },
+  {
+    "title": "Claude",
+    "description": "Anthropic's conversational AI assistant for coding, analysis, writing, and technical problem-solving.",
+    "metadata": "Note: Costs more than therapy, still good at pointing out problems.",
+    "url": "https://claude.ai"
+  }
+]
