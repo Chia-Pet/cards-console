@@ -1,6 +1,6 @@
-# Manni Links Dashboard
+# Manni Blog & Links Dashboard
 
-A personal link dashboard featuring an interactive console-style entry and card-based layout for projects, tools, and resources.
+A personal Blog & link dashboard featuring an interactive console-style entry and card-based layout for projects, tools, and resources.
 
 ## Features
 
@@ -18,7 +18,7 @@ A personal link dashboard featuring an interactive console-style entry and card-
 1. Clone or download this repository.
 2. Open `index.html` in your browser.
 3. Replace placeholder cards in `links.json` & `blog.json` or the template in HTML with your own links.
-4. Add blog articles as separate HTML files inside the `blog/` directory (Can be changed in JS).
+4. Add blog articles as separate HTML files inside the `blog/` directory (Can be changed in blog.json).
 5. Enable or customize the F-key mainframe menu in the settings/config.
 6. Customize card metadata to control indicator light colors.
 7. Adjust styles or scripts as needed.
